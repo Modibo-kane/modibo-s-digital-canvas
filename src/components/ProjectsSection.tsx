@@ -7,6 +7,7 @@ const projects = [
     description: "Optimisation, CMS, déploiement d'un portfolio personnel professionnel.",
     tags: ["CMS", "Optimisation", "Déploiement"],
     accent: "border-primary",
+    link: "https://ripolldarcia.netlify.app",
   },
   {
     title: "Site de vente de fruits",
@@ -14,6 +15,7 @@ const projects = [
     description: "Application e-commerce avec déploiement, hébergement, base de données et gestion Git/Github.",
     tags: ["Base de données", "Git/Github", "Hébergement"],
     accent: "border-secondary",
+    link: "https://fruit-d-or-site.onrender.com",
   },
   {
     title: "Mini-bibliothèque",
@@ -21,6 +23,7 @@ const projects = [
     description: "Application web complète avec HTML, CSS/TailwindCSS, JavaScript, PHP, PostgreSQL. Déployée sur Render.",
     tags: ["PHP", "PostgreSQL", "TailwindCSS", "Render"],
     accent: "border-accent",
+    link: "https://bibliotheque-by-mvkane.onrender.com",
   },
 ];
 
@@ -33,9 +36,12 @@ const ProjectsSection = () => (
 
       <div className="grid md:grid-cols-3 gap-6">
         {projects.map((p) => (
-          <div
+          <a
             key={p.title}
-            className={`bg-card rounded-xl overflow-hidden shadow-sm border-t-4 ${p.accent} hover:shadow-lg transition-shadow group`}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`bg-card rounded-xl overflow-hidden shadow-sm border-t-4 ${p.accent} hover:shadow-lg transition-shadow group block`}
           >
             <div className="p-6 space-y-3">
               <div className="flex items-center justify-between">
@@ -54,7 +60,7 @@ const ProjectsSection = () => (
                 ))}
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
