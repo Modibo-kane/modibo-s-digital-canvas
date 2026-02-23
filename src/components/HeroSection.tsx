@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-illustration.png";
+import heroImg from "@/assets/modibo-photo.jpg";
 
 const HeroSection = () => (
   <section
