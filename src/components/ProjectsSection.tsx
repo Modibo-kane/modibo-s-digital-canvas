@@ -2,12 +2,20 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "Wakanect",
+    date: "2025 — présent",
+    description: "Plateforme SaaS de vente via WhatsApp pour commerçants au Sénégal et au Mali. Conception produit et développement de l'architecture (front-end, back-end, paiement).",
+    tags: ["React", "Node.js", "MongoDB"],
+    accent: "border-secondary",
+    link: "https://wakanect.com",
+  },
+  {
     title: "Site Portfolio",
     date: "12/12/2025",
     description: "Optimisation, CMS, déploiement d'un portfolio personnel professionnel.",
     tags: ["CMS", "Optimisation", "Déploiement"],
     accent: "border-primary",
-    link: "https://ripolldarcia.netlify.app",
+    link: "https://ripolldarcia.com",
   },
   {
     title: "Site de vente de fruits",
@@ -34,7 +42,7 @@ const ProjectsSection = () => (
         Mes <span className="text-primary">projets</span>
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((p) => (
           <a
             key={p.title}

@@ -2,7 +2,7 @@ const skillGroups = [
   {
     title: "Front-End",
     color: "bg-green-light text-green-dark",
-    skills: ["HTML", "CSS", "JavaScript ES6"],
+    skills: ["HTML", "CSS", "JavaScript ES6", "React"],
   },
   {
     title: "Back-End",
@@ -12,7 +12,7 @@ const skillGroups = [
   {
     title: "Bases de données",
     color: "bg-yellow-light text-accent-foreground",
-    skills: ["MySQL", "PostgreSQL"],
+    skills: ["MySQL", "PostgreSQL", "MongoDB"],
   },
   {
     title: "Frameworks",
@@ -27,7 +27,7 @@ const skillGroups = [
   {
     title: "Outils",
     color: "bg-yellow-light text-accent-foreground",
-    skills: ["Git & Github", "Insomnia", "Canvas"],
+    skills: ["Git & Github", "Insomnia", "Strapi", "Canvas"],
   },
 ];
 

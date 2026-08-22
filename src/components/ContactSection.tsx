@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import { MapPin, Mail, Phone, Send } from "lucide-react";
+import { MapPin, Mail, Phone, Send, Linkedin, Github } from "lucide-react";
 
 const ContactSection = () => {
   const [sent, setSent] = useState(false);
@@ -42,6 +42,32 @@ const ContactSection = () => {
                   <Phone size={18} className="text-primary" />
                 </div>
                 <span className="text-sm text-muted-foreground">+221 70-642-54-77</span>
+              </li>
+              <li className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Linkedin size={18} className="text-primary" />
+                </div>
+                <a
+                  href="https://linkedin.com/in/modibo-kane"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  linkedin.com/in/modibo-kane
+                </a>
+              </li>
+              <li className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Github size={18} className="text-primary" />
+                </div>
+                <a
+                  href="https://github.com/Modibo-kane"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  github.com/Modibo-kane
+                </a>
               </li>
             </ul>
           </div>

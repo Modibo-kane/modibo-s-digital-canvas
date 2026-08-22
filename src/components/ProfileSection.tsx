@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Globe, Dribbble } from "lucide-react";
+import { MapPin, Mail, Phone, Globe, Dribbble, Linkedin, Github } from "lucide-react";
 
 const ProfileSection = () => (
   <section id="profil" className="section-padding bg-muted/50">
@@ -25,6 +25,28 @@ const ProfileSection = () => (
             <li className="flex items-center gap-3">
               <Phone size={16} className="text-primary shrink-0" />
               +221 70-642-54-77
+            </li>
+            <li className="flex items-center gap-3">
+              <Linkedin size={16} className="text-primary shrink-0" />
+              <a
+                href="https://linkedin.com/in/modibo-kane"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                @modibo-kane
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <Github size={16} className="text-primary shrink-0" />
+              <a
+                href="https://github.com/Modibo-kane"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                Modibo-kane
+              </a>
             </li>
           </ul>
         </div>
@@ -71,7 +93,7 @@ const ProfileSection = () => (
           <h3 className="font-heading font-semibold text-lg text-secondary pt-2">Formation</h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <span className="font-medium text-foreground">2025</span> — Licence 2 Dév. Web &amp; Mobile, UN Cheick Hamidou Kane
+              <span className="font-medium text-foreground">2026</span> — Licence 2 Dév. Web &amp; Mobile, UN Cheick Hamidou Kane
             </li>
             <li>
               <span className="font-medium text-foreground">2025</span> — Formation accélérée, Telly Tech
