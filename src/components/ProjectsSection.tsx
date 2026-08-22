@@ -51,6 +51,14 @@ const ProjectsSection = () => (
             rel="noopener noreferrer"
             className={`bg-card rounded-xl overflow-hidden shadow-sm border-t-4 ${p.accent} hover:shadow-lg transition-shadow group block`}
           >
+            <div className="aspect-video overflow-hidden bg-muted">
+              <img
+                src={`https://image.thum.io/get/width/600/crop/800/${p.link}`}
+                alt={`Aperçu du site ${p.title}`}
+                loading="lazy"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
             <div className="p-6 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs text-muted-foreground">{p.date}</span>
