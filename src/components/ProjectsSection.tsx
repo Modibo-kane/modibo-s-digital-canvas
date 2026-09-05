@@ -1,7 +1,7 @@
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { siteProjects } from "@/data/profile";
 import wakanectImg from "@/assets/projects/wakanect.png";
-import sitePortfolioImg from "@/assets/projects/ripolldarcia.png";
+import sitePortfolioImg from "@/assets/projects/ripolldarci.png";
 import apiPdfImg from "@/assets/projects/apipdf.png";
 
 const images = [wakanectImg, sitePortfolioImg, apiPdfImg];
