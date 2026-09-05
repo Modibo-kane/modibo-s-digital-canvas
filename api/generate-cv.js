@@ -1,6 +1,7 @@
 import {
-  contact, identite, competences, outils, qualitePro, langues, experiences, formation, projets,
-} from "../src/data/profile.ts";
+  contact, identite, competences, outils, qualitePro, langues,
+  experiences, formation, autresExperiences, projets,
+} from "../src/data/profile";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -20,27 +21,33 @@ export default async function handler(req, res) {
     competences,
     outils,
     qualitePro,
-    langues,
-    experiences,
-    postes: formation,
-    projets,
+    langues: langues.map((l) => `${l.lang} : ${l.level}`),
+    // strip les champs d'affichage (blurb, tags, accent, link) avant envoi à l'API
+    experiences: experiences.map(({ titre, periode, entreprise, description }) => ({ titre, periode, entreprise, description })),
+    formation,
+    autresExperiences,
+    projets: projets.map(({ titre, periode, description }) => ({ titre, periode, description })),
   };
 
-  const reponse = await fetch("https://api-pdf-5p10.onrender.com/api/pdf/cv", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.API_PDF_TOKEN}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(cvData),
-  });
+  try {
+    const reponse = await fetch("https://api-pdf-5p10.onrender.com/api/pdf/cv", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.API_PDF_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cvData),
+    });
 
-  if (!reponse.ok) {
-    return res.status(reponse.status).json({ error: "Échec de la génération du CV" });
+    if (!reponse.ok) {
+      return res.status(reponse.status).json({ error: "Échec de la génération du CV" });
+    }
+
+    const buffer = await reponse.arrayBuffer();
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition", 'attachment; filename="CV-Modibo-Kane.pdf"');
+    res.send(Buffer.from(buffer));
+  } catch (err) {
+    res.status(502).json({ error: "Impossible de joindre le service de génération" });
   }
-
-  const buffer = await reponse.arrayBuffer();
-  res.setHeader("Content-Type", "application/pdf");
-  res.setHeader("Content-Disposition", 'attachment; filename="CV-Modibo-Kane.pdf"');
-  res.send(Buffer.from(buffer));
 }

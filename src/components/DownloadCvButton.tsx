@@ -33,7 +33,7 @@ const DownloadCvButton = () => {
       <button
         onClick={handleDownload}
         disabled={loading}
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-secondary text-secondary font-medium hover:bg-secondary hover:text-secondary-foreground transition-colors disabled:opacity-60"
+        className="inline-flex items-center gap-2 p-6 w-[200px] h-[66px] rounded-lg border border-secondary text-secondary font-medium hover:bg-secondary hover:text-secondary-foreground transition-colors disabled:opacity-60"
       >
         {loading ? <Loader2 className="animate-spin" size={18} /> : <Download size={18} />}
         {loading ? "Génération..." : "Télécharger mon CV"}
