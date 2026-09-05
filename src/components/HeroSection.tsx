@@ -1,4 +1,5 @@
 import heroImg from "@/assets/moi.jpeg";
+import DownloadCvButton from "@/components/DownloadCvButton";
 
 const HeroSection = () => (
   <section
@@ -32,6 +33,7 @@ const HeroSection = () => (
           >
             Voir mes projets
           </a>
+          <DownloadCvButton />
         </div>
       </div>
 
