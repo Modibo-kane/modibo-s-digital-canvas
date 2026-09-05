@@ -1,39 +1,10 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { siteProjects } from "@/data/profile";
+import wakanectImg from "@/assets/projects/wakanect.png";
+import sitePortfolioImg from "@/assets/projects/ripolldarcia.png";
+import apiPdfImg from "@/assets/projects/apipdf.png";
 
-const projects = [
-  {
-    title: "Wakanect",
-    date: "2025 — présent",
-    description: "Plateforme SaaS de vente via WhatsApp pour commerçants au Sénégal et au Mali. Conception produit et développement de l'architecture (front-end, back-end, paiement).",
-    tags: ["React", "Node.js", "MongoDB"],
-    accent: "border-secondary",
-    link: "https://wakanect.com",
-  },
-  {
-    title: "Site Portfolio",
-    date: "12/12/2025",
-    description: "Optimisation, CMS, déploiement d'un portfolio personnel professionnel.",
-    tags: ["CMS", "Optimisation", "Déploiement"],
-    accent: "border-primary",
-    link: "https://ripolldarcia.com",
-  },
-  {
-    title: "Site de vente de fruits",
-    date: "12/09/2025",
-    description: "Application e-commerce avec déploiement, hébergement, base de données et gestion Git/Github.",
-    tags: ["Base de données", "Git/Github", "Hébergement"],
-    accent: "border-secondary",
-    link: "https://fruit-d-or-site.onrender.com",
-  },
-  {
-    title: "Mini-bibliothèque",
-    date: "04/08/2025",
-    description: "Application web complète avec HTML, CSS/TailwindCSS, JavaScript, PHP, PostgreSQL. Déployée sur Render.",
-    tags: ["PHP", "PostgreSQL", "TailwindCSS", "Render"],
-    accent: "border-accent",
-    link: "https://bibliotheque-by-mvkane.onrender.com",
-  },
-];
+const images = [wakanectImg, sitePortfolioImg, apiPdfImg];
 
 const ProjectsSection = () => (
   <section id="projets" className="section-padding bg-muted/50">
@@ -43,34 +14,45 @@ const ProjectsSection = () => (
       </h2>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {projects.map((p) => (
+        {siteProjects.map((p, i) => (
           <a
-            key={p.title}
+            key={p.titre}
             href={p.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`bg-card rounded-xl overflow-hidden shadow-sm border-t-4 ${p.accent} hover:shadow-lg transition-shadow group block`}
+            className={`relative bg-card rounded-xl overflow-hidden shadow-sm border-t-4 ${p.accent} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group block`}
           >
-            <div className="aspect-video overflow-hidden bg-muted">
+            <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted to-muted/50">
               <img
-                src={`https://image.thum.io/get/width/600/crop/800/${p.link}`}
-                alt={`Aperçu du site ${p.title}`}
+                src={images[i] ?? `https://image.thum.io/get/width/600/crop/800/${p.link}`}
+                alt={`Aperçu du site ${p.titre}`}
                 loading="lazy"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0" />
+              <div className="absolute inset-0 flex items-center justify-center bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="flex items-center gap-2 text-primary-foreground font-medium text-sm">
+                  Voir le projet <ArrowUpRight size={16} />
+                </span>
+              </div>
+              <span className="absolute top-3 left-3 w-7 h-7 flex items-center justify-center rounded-full bg-background/90 backdrop-blur text-xs font-bold text-foreground">
+                {String(i + 1).padStart(2, "0")}
+              </span>
             </div>
+
             <div className="p-6 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">{p.date}</span>
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{p.periode}</span>
                 <ExternalLink size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
-              <h3 className="font-heading font-semibold text-lg">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {p.description}
-              </p>
+              <h3 className="font-heading font-semibold text-lg leading-snug">{p.titre}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.blurb}</p>
               <div className="flex flex-wrap gap-1.5 pt-2">
                 {p.tags.map((t) => (
-                  <span key={t} className="text-[10px] px-2 py-1 rounded-full bg-muted text-muted-foreground font-medium">
+                  <span
+                    key={t}
+                    className="text-[10px] px-2.5 py-1 rounded-full bg-muted text-muted-foreground font-semibold tracking-wide border border-border"
+                  >
                     {t}
                   </span>
                 ))}
