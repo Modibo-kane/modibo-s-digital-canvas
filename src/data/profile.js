@@ -46,22 +46,14 @@ export const langues = [
 
 export const experiences = [
   {
-    titre: "Fondateur & Développeur", entreprise: "Wakanect", periode: "2025 - 2026",
-    description: "Plateforme SaaS de vente via WhatsApp pour commerçants en Afrique. Front-end React/Vite/TailwindCSS (Cloudflare Workers), back-end Node.js (Render), MongoDB Atlas. Gating par abonnement, checkout et intégration paiement (PayDunya SoftPay). Revue de code et correction de failles de sécurité avant mise en production.",
-    blurb: "Plateforme SaaS de vente via WhatsApp pour commerçants au Sénégal et au Mali. Conception produit et développement de l'architecture (front-end, back-end, paiement).",
-    tags: ["React", "Node.js", "MongoDB"], accent: "border-secondary", link: "https://wakanect.com",
-  },
-  {
-    titre: "Création de site portfolio", entreprise: "Projet client", periode: "2025",
-    description: "Site portfolio personnalisé de bout en bout, avec CMS sur mesure et optimisation performance/référencement.",
+    titre: "Ripoll Darcia — Plateforme éditoriale (freelance)",
+    entreprise: "Projet client",
+    periode: "2025",
+    description: "Développement et maintenance full-stack d'un site CMS-driven (JavaScript ES Modules, Strapi v5, PostgreSQL) : architecture headless, automatisation email (Brevo), SEO technique, hébergement Netlify/Render.",
     blurb: "Optimisation, CMS, déploiement d'un portfolio personnel professionnel.",
-    tags: ["CMS", "Optimisation", "Déploiement"], accent: "border-primary", link: "https://ripolldarcia.com",
-  },
-  {
-    titre: "Réalisation d'une mini-bibliothèque", entreprise: "Telly Tech", periode: "2025",
-    description: "Projet de fin de module : front-end HTML/CSS/TailwindCSS/JavaScript, initiation à Render et PostgreSQL.",
-    blurb: "Application web complète avec HTML, CSS/TailwindCSS, JavaScript, PHP, PostgreSQL. Déployée sur Render.",
-    tags: ["PHP", "PostgreSQL", "TailwindCSS", "Render"], accent: "border-accent", link: "https://bibliotheque-by-mvkane.onrender.com",
+    tags: ["CMS", "Optimisation", "Déploiement"],
+    accent: "border-primary",
+    link: "https://ripolldarcia.com",
   },
 ];
 
@@ -103,12 +95,33 @@ export const autresExperiences = [
 
 export const projets = [
   {
-    titre: "api-pdf", periode: "2026 — en cours",
+    titre: "Wakanect",
+    periode: "2025 - 2026",
+    description: "Plateforme SaaS de vente via WhatsApp pour commerçants en Afrique. Front-end React/Vite/TailwindCSS (Cloudflare Workers), back-end Node.js (Render), MongoDB Atlas. Gating par abonnement, checkout et intégration paiement (PayDunya SoftPay). Revue de code et correction de failles de sécurité avant mise en production.",
+    blurb: "Plateforme SaaS de vente via WhatsApp pour commerçants au Sénégal et au Mali. Conception produit et développement de l'architecture (front-end, back-end, paiement).",
+    tags: ["React", "Node.js", "MongoDB"],
+    accent: "border-secondary",
+    link: "https://wakanect.com",
+  },
+  {
+    titre: "api-pdf",
+    periode: "2026 — en cours",
     description: "API REST de génération de documents PDF à la demande (factures, reçus, CV), avec un dashboard web complet. Architecture à deux moteurs : DomPDF pour les documents rapides, microservice Node.js/Puppeteer séparé pour un rendu fiable des CV. Authentification double (Sanctum pour l'API, sessions pour le site). Déployé sur Render, Vercel et Neon (PostgreSQL).",
     blurb: "API REST de génération de documents PDF à la demande (factures, reçus, CV), avec dashboard web. Architecture à deux moteurs : DomPDF pour les documents rapides, microservice Node.js/Puppeteer pour un rendu fiable des CV.",
-    tags: ["Laravel", "Node.js/Puppeteer", "PostgreSQL"], accent: "border-secondary", link: "https://api-pdf-5p10.onrender.com",
+    tags: ["Laravel", "Node.js/Puppeteer", "PostgreSQL"],
+    accent: "border-secondary",
+    link: "https://api-pdf-5p10.onrender.com",
+  },
+  {
+    titre: "Réalisation d'une mini-bibliothèque",
+    periode: "2025",
+    description: "Projet de fin de module (Telly Tech) : front-end HTML/CSS/TailwindCSS/JavaScript, initiation à Render et PostgreSQL.",
+    blurb: "Application web complète avec HTML, CSS/TailwindCSS, JavaScript, PHP, PostgreSQL. Déployée sur Render.",
+    tags: ["PHP", "PostgreSQL", "TailwindCSS", "Render"],
+    accent: "border-accent",
+    link: "https://bibliotheque-by-mvkane.onrender.com",
   },
 ];
 
 
-export const siteProjects = [experiences[0], experiences[1], projets[0], experiences[2]];
+export const siteProjects = [projets[0], experiences[0], projets[1], projets[2]];
