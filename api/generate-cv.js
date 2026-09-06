@@ -39,7 +39,9 @@ export default async function handler(req, res) {
     });
 
     if (!reponse.ok) {
-      return res.status(reponse.status).json({ error: "Échec de la génération du CV" });
+      const detail = await reponse.text();
+      console.error("Erreur api-pdf:", detail);
+      return res.status(reponse.status).json({ error: "Échec de la génération du CV", detail });
     }
 
     const buffer = await reponse.arrayBuffer();
