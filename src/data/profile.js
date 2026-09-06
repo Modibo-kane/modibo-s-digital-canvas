@@ -81,16 +81,16 @@ export const formation = [
 
 // Champ "autresExperiences" (titre, periode, description)
 export const autresExperiences = [
-    {
-        titre: "Vente e-commerce",
-        periode: "Activité personnelle via WhatsApp",
-        description: "Gestion autonome d'une activité de vente en ligne, prospection et relation client (clientèle malienne, gérée depuis le Sénégal, logistique de livraison 2 à 7 jours).",
-    },
-    {
-        titre: "Coach formateur",
-        periode: "Cours de renforcement",
-        description: "Cours de renforcement en HTML, CSS, JavaScript et PHP à des étudiants, accompagnement continu.",
-    },
+  {
+    titre: "Vente e-commerce",
+    periode: "Activité personnelle via WhatsApp",
+    description: "Gestion autonome d'une activité de vente en ligne, prospection et relation client (clientèle malienne, gérée depuis le Sénégal, logistique de livraison 2 à 7 jours).",
+  },
+  {
+    titre: "Coach formateur",
+    periode: "Cours de renforcement",
+    description: "Dispense de cours de renforcement en HTML, CSS, JavaScript et PHP à des étudiants. Accompagnement continu de nouveaux étudiants pendant le temps libre.",
+  },
 ];
 
 export const projets = [
