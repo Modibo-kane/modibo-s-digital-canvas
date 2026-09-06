@@ -12,7 +12,7 @@ const SkillsSection = () => (
             <h3 className="font-heading font-semibold text-base mb-4">{g.title}</h3>
             <div className="flex flex-wrap gap-2">
               {g.skills.map((s) => (
-                <span key={s} className={`px-3 py-1.5 text-xs font-medium rounded-full ${g.color}`}>{s}</span>
+                <span key={s} className={`px-3 py-1.5 text-xs font-medium rounded-full`}>{s}</span>
               ))}
             </div>
           </div>
