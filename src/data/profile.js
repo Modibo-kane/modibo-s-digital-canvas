@@ -71,19 +71,19 @@ export const formation = [
         diplome: "Licence 2 Développement d'application web et mobile",
         etablissement: "Université Numérique Cheikh Hamidou Kane (ex UVS)",
         periode: "2026",
-        description: "",
+        description: "Formation en cours, orientée développement web et mobile full stack.",
     },
     {
         diplome: "Formation accélérée en développement web",
         etablissement: "Telly Tech",
         periode: "2025",
-        description: "",
+        description: "Formation intensive couvrant le développement front-end et back-end.",
     },
     {
         diplome: "Baccalauréat scientifique (spécialité Biologie)",
         etablissement: "Lycée Privé Askia Douso",
         periode: "2023",
-        description: "",
+        description: "Bac obtenu avec spécialité Biologie.",
     },
 ];
 
