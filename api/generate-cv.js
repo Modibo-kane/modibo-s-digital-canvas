@@ -1,7 +1,7 @@
 import {
   contact, identite, competences, outils, qualitePro, langues,
   experiences, formation, autresExperiences, projets,
-} from "../src/data/profile";
+} from "../src/data/profile.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -22,7 +22,6 @@ export default async function handler(req, res) {
     outils,
     qualitePro,
     langues: langues.map((l) => `${l.lang} : ${l.level}`),
-    // strip les champs d'affichage (blurb, tags, accent, link) avant envoi à l'API
     experiences: experiences.map(({ titre, periode, entreprise, description }) => ({ titre, periode, entreprise, description })),
     formation,
     autresExperiences,
