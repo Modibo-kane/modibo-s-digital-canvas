@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Download, Loader2 } from "lucide-react";
+import { FillLayer, RollLabel } from "@/components/motion/PillLink";
+import { pillBase, pillVariants } from "@/lib/pill";
 
 const DownloadCvButton = () => {
   const [loading, setLoading] = useState(false);
@@ -33,12 +35,19 @@ const DownloadCvButton = () => {
       <button
         onClick={handleDownload}
         disabled={loading}
-        className="inline-flex items-center gap-2 p-6 w-[200px] h-[66px] rounded-lg border border-secondary text-secondary font-medium hover:bg-secondary hover:text-secondary-foreground transition-colors disabled:opacity-60"
+        aria-busy={loading}
+        data-cursor="PDF"
+        className={`${pillBase} ${pillVariants.outline} disabled:opacity-60`}
       >
-        {loading ? <Loader2 className="animate-spin" size={18} /> : <Download size={18} />}
-        {loading ? "Génération..." : "Télécharger mon CV"}
+        <FillLayer />
+        <span className="relative flex items-center gap-2 transition-colors duration-300 group-hover:text-secondary-foreground">
+          {loading ? <Loader2 className="animate-spin" size={16} /> : <Download size={16} />}
+          <RollLabel>{loading ? "Génération..." : "Télécharger mon CV"}</RollLabel>
+        </span>
       </button>
-      {error && <span className="text-xs text-destructive">Erreur, réessaie dans un instant.</span>}
+      <span role="status" className="min-h-4 text-xs text-red-300">
+        {error && "Erreur, réessaie dans un instant."}
+      </span>
     </div>
   );
 };

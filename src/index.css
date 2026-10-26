@@ -5,36 +5,32 @@
 @tailwind utilities;
 
 @layer base {
+  /* Palette « Modibo Kané » — violet + jaune (design system) */
   :root {
-    --background: 120 20% 98%;
+    --background: 270 20% 98%;
     --foreground: 270 30% 15%;
-
     --card: 0 0% 100%;
     --card-foreground: 270 30% 15%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 270 30% 15%;
-
-    --primary: 150 60% 40%;
+    --primary: 270 50% 55%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 270 50% 55%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 120 10% 94%;
+    --secondary: 48 95% 55%;
+    --secondary-foreground: 270 30% 15%;
+    --muted: 270 10% 94%;
     --muted-foreground: 270 10% 45%;
-
-    --accent: 48 95% 55%;
+    --accent: 48 80% 90%;
     --accent-foreground: 270 30% 15%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 150 15% 88%;
-    --input: 150 15% 88%;
-    --ring: 150 60% 40%;
-
+    --border: 270 15% 88%;
+    --input: 270 15% 88%;
+    --ring: 270 50% 55%;
     --radius: 0.75rem;
+
+    --violet-light: 270 40% 92%;
+    --violet-dark: 270 50% 40%;
+    --yellow-light: 48 80% 90%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -44,35 +40,29 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Custom tokens */
-    --green-light: 150 50% 90%;
-    --violet-light: 270 40% 92%;
-    --yellow-light: 48 80% 90%;
-    --green-dark: 150 60% 30%;
-    --violet-dark: 270 50% 40%;
   }
 
   .dark {
     --background: 270 30% 8%;
-    --foreground: 120 10% 95%;
+    --foreground: 270 10% 95%;
     --card: 270 25% 12%;
-    --card-foreground: 120 10% 95%;
+    --card-foreground: 270 10% 95%;
     --popover: 270 25% 12%;
-    --popover-foreground: 120 10% 95%;
-    --primary: 150 60% 45%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 270 50% 60%;
-    --secondary-foreground: 0 0% 100%;
+    --popover-foreground: 270 10% 95%;
+    --primary: 270 60% 65%;
+    --primary-foreground: 270 30% 8%;
+    --secondary: 48 95% 55%;
+    --secondary-foreground: 270 30% 15%;
     --muted: 270 20% 18%;
-    --muted-foreground: 120 10% 65%;
-    --accent: 48 95% 55%;
-    --accent-foreground: 270 30% 15%;
+    --muted-foreground: 270 10% 65%;
+    --accent: 270 25% 20%;
+    --accent-foreground: 270 10% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 270 20% 22%;
     --input: 270 20% 22%;
-    --ring: 150 60% 45%;
+    --ring: 270 60% 65%;
+    --violet-light: 270 30% 20%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -106,10 +96,44 @@
   .section-padding {
     @apply py-20 px-6 md:px-12 lg:px-24;
   }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px hsl(var(--foreground) / 0.35);
+  }
+
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  }
+}
+
+/* Curseur personnalisé : seulement pour les pointeurs précis */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Les animations d'entrée ne doivent jamais créer de défilement horizontal */
+body {
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 :root {

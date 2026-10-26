@@ -16,10 +16,10 @@ export const identite = {
 };
 
 export const competencesGroups = [
-  { title: "Backend", color: "bg-green-light text-green-dark", skills: ["PHP / Laravel", "Architecture API REST", "Authentification (Sanctum, sessions)", "Génération de PDF (DomPDF, Blade)", "Sécurisation d'API (tokens, secrets)"] },
+  { title: "Backend", color: "bg-violet-light text-violet-dark", skills: ["PHP / Laravel", "Architecture API REST", "Authentification (Sanctum, sessions)", "Génération de PDF (DomPDF, Blade)", "Sécurisation d'API (tokens, secrets)"] },
   { title: "Frontend", color: "bg-violet-light text-violet-dark", skills: ["React", "Blade", "JavaScript vanilla", "CSS (Flexbox, design system)"] },
   { title: "Architecture & intégration", color: "bg-yellow-light text-accent-foreground", skills: ["Multi-services (Laravel + Node.js/Puppeteer)", "Communication inter-services (HTTP, secret partagé)", "Schémas de données flexibles"] },
-  { title: "Bases de données", color: "bg-green-light text-green-dark", skills: ["PostgreSQL", "MongoDB", "MySQL", "Modélisation relationnelle"] },
+  { title: "Bases de données", color: "bg-violet-light text-violet-dark", skills: ["PostgreSQL", "MongoDB", "MySQL", "Modélisation relationnelle"] },
   { title: "DevOps / Déploiement", color: "bg-violet-light text-violet-dark", skills: ["Render (Docker)", "Vercel (serverless)", "Reverse proxy / HTTPS", "Variables d'environnement & secrets"] },
   { title: "Documentation & produit", color: "bg-yellow-light text-accent-foreground", skills: ["Documentation API publique", "Workflows d'intégration (pattern proxy)"] },
 ];
